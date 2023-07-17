@@ -34,12 +34,12 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
 
-composer insatll
-php artisan optimize:clear
-php artisan route:clear
-php artisan key:generate
-php artisan migrate:fresh --seed
-php artisan serve
+composer insatll<br>
+php artisan optimize:clear<br>
+php artisan route:clear<br>
+php artisan key:generate<br>
+php artisan migrate:fresh --seed<br>
+php artisan serve<br>
 
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
