@@ -30,18 +30,27 @@
 					<div class="product-gallery">
 						<div class="product-gallery__thumbs">
 							<div class="product-gallery__thumb">
-                                @php($product['images'] = json_decode($product->images))
-								<img src="{{ Voyager::image( $product->images[0] ) }}" alt="product">
+                                @if (!empty($product['images']) && count($product['images']) > 0)
+                                    @php($firstImage = $product['images'][0])
+                                    <img alt="image" src="{{ asset('site/images/products/' . $firstImage) }}" width="35">
+                                @endif
 							</div>
 							<div class="product-gallery__thumb">
-								<img src="{{ Voyager::image( $product->images[1] ) }}" alt="product">
-							</div>
+                                @if (!empty($product['images']) && count($product['images']) > 1)
+                                    @php($firstImage = $product['images'][1])
+                                    <img alt="image" src="{{ asset('site/images/products/' . $firstImage) }}" width="35">
+                                @endif							</div>
 							<div class="product-gallery__thumb">
-								<img src="{{ Voyager::image( $product->images[2] ) }}" alt="product">
-							</div>
+                                @if (!empty($product['images']) && count($product['images']) > 2)
+                                    @php($firstImage = $product['images'][2])
+                                    <img alt="image" src="{{ asset('site/images/products/' . $firstImage) }}" width="35">
+                                @endif							</div>
 							<div class="product-gallery__thumb">
-								<img src="{{ Voyager::image( $product->images[3] ) }}" alt="product">
-							</div>
+                                @if (!empty($product['images']) && count($product['images']) > 3)
+                                    @php($firstImage = $product['images'][3])
+                                    <img alt="image" src="{{ asset('site/images/products/' . $firstImage) }}" width="35">
+                                @endif
+                            </div>
 						</div>
 						<div class="product-gallery__img">
 							<img src="" alt="product">
@@ -121,8 +130,7 @@
 								@lang('header.Ishlab chiqarish sertifikati')
 							</div>
 							<div>
-                                @php($product['productioncertificate'] = json_decode($product->productioncertificate))
-								<a href="{{ Voyager::image( $product['productioncertificate'][0]->download_link) }}" download class="btn">
+								<a href="/site/images/certificate/{{ $product->productioncertificate}}" download class="btn">
 									<img src="/img/icons/download.svg" alt="ico">
 									<span>@lang('header.Yuklab olish')</span>
 								</a>

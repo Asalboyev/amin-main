@@ -24,10 +24,8 @@
         <div class="main-carousel">
             <div class="main-carousel__circle">
 @foreach($categories_spacial as $category)
-                <img src="{{ Voyager::image( $category->images ) }}" alt="toy">
-{{--                <img src="img/toys/2.png" alt="toy">--}}
-{{--                <img src="img/toys/3.png" alt="toy">--}}
-{{--                <img src="img/toys/4.png" alt="toy">--}}
+                <img src="/site/images/categories/{{$category->images}}" alt="toy">
+
                 @endforeach
             </div>
             <div class="main-carousel__img">
@@ -73,7 +71,7 @@
                             {{  $category['name_'.\App::getLocale()]  }}
                     </div>
                     <div class="shop-carousel__img">
-                        <img src="{{ Voyager::image( $category->images ) }}" alt="shop">
+                        <img src="/site/images/categories/{{$category->images}}" alt="shop">
                     </div>
 
                 </a>
@@ -131,7 +129,8 @@
 
 @lang('header.Harbiy texnika')
             </h2>
-            <a href="{{ route('catalog_products', $category->id) }}" class="war__btn btn btn-white">
+{{--            {{ route('catalog_products', $category->id) }}--}}
+            <a href="" class="war__btn btn btn-white">
                 @lang('header.Katalogda ko\'rish')
             </a>
         </div>
@@ -167,16 +166,7 @@
                 <span>@lang('header.Men shaxsiy')</span>
             </label>
         </form>
-        <script>
-            // JavaScript kodini qo'shing
-            document.querySelector('.btn').addEventListener('click', function (e) {
-                e.preventDefault(); // Bog'lanishni to'xtatish
-                var confirmation = confirm('Haqiqatan ham malumotni o\'chirmoqchimisiz?');
-                if (confirmation) {
-                    document.querySelector('form').reset(); // Formani tozalash
-                }
-            });
-        </script>
+
     </div>
 </section>
 

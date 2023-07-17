@@ -2,8 +2,10 @@
     <div class="products-item">
         <div class="products-item__wrap">
             <div class="products-item__img">
-                @php($otherProduct['images'] = json_decode($otherProduct->images))
-                <img src="{{ Voyager::image( $otherProduct->images[0] ) }}" alt="product">
+                @if (!empty($otherProduct['images']) && count($otherProduct['images']) > 0)
+                    @php($firstImage = $otherProduct['images'][0])
+                    <img alt="product" src="{{ asset('site/images/products/' . $firstImage) }}" >
+                @endif
             </div>
             <div class="products-item__buttons">
                 <button class="products-item__zoom">

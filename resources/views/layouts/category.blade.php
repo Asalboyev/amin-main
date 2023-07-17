@@ -1,8 +1,8 @@
 @foreach($categories as $category)
     <a href="{{ route('catalog_products', $category->id) }}" class="category-item">
         <div class="category-item__ico">
-            @php($category['icon'] = json_decode($category->icon))
-            <img src="{{ Voyager::image( $category['icon'][0]->download_link) }}" alt="ico">
+
+            <img src="/site/images/categories/{{$category->images}}" alt="ico">
         </div>
         <div class="category-item__name">
             <p>{{  $category['name_'.\App::getLocale()]  }}</p>

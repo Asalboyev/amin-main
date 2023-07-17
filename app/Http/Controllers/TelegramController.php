@@ -51,7 +51,7 @@ class TelegramController extends Controller
 
         // Telegramga xabarni yuborish
         $client = new Client();
-        $response = $client->delete(
+        $response = $client->post(
             "https://api.telegram.org/bot{$botToken}/sendMessage",
             [
                 'form_params' => [
